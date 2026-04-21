@@ -15,6 +15,17 @@ def binary_search(arr, item):
     else: 
       low = mid + 1
   return None
-my_list = [1, 3, 5, 7, 9] 
-print(binary_search(my_list, 3))
+
 # in simple is we have 100items it takes 100 while binary search takes 7 times 
+# BIG O notation tells how fast is an algorithms is: it counts the number of operation
+"""algorithms is measured in number operations, 
+a run of algorithms is expressed in big O operations
+# Simple search — O(n)
+# worst case you check every single element
+# 100 elements = 100 operations
+
+# Binary search — O(log n)
+# worst case you check log2(n) elements
+# 100 elements = 7 operations
+Big O is how every programmer answers the question "will this still be fast when the data gets huge?
+"""
