@@ -9,5 +9,43 @@ You were close in your thinking, you just applied it the wrong way around! Does 
 the 4 is index of 4
 Fifth item is at address 04
 You can jump straight to it — no searching needed
-l
+Arrays are good at reads
+arrays are good at for sequential and random access 
+Exactly right! Each node in a linked list carries extra overhead for storing the pointer(s), unlike an array which stores just the raw data.
+Array of 4 integers:
+[ 10 | 20 | 30 | 40 ]
+ 4B    4B   4B   4B   = 16 bytes total
+
+Linked list of 4 integers:
+[ 10 | ptr ] → [ 20 | ptr ] → [ 30 | ptr ] → [ 40 | null ]
+  4B + 8B       4B + 8B        4B + 8B         4B + 8B     = 48 bytes total
 """
+items = [10, 20, 30, 40]
+
+# Random access — O(1)
+print(items[2])  # 30
+
+# Sequential access — O(n)
+for item in items:
+    print(item)
+    
+#Example of selection sort
+def findSmallest(arr):
+    smallest = arr[0]
+    smallest_index = 0
+    for i in range(1, len(arr)):
+        if arr[i] < smallest:        
+            smallest = arr[i]    
+            smallest_index = i     
+    return smallest_index
+
+# now we use this function to write selection sort
+def selectSort(arr):
+  new_arr = []
+  copied_arr = list(arr)
+  for i in range(len(copied_arr)):
+    smallest = findSmallest(copied_arr)
+    new_arr.append(copied_arr.pop(smallest))
+  return new_arr
+print(selectSort([5,3,6,4,10, 1]))
+
