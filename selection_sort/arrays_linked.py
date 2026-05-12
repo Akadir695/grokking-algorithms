@@ -31,21 +31,20 @@ for item in items:
     
 #Example of selection sort
 def findSmallest(arr):
-    smallest = arr[0]
-    smallest_index = 0
-    for i in range(1, len(arr)):
-        if arr[i] < smallest:        
-            smallest = arr[i]    
-            smallest_index = i     
-    return smallest_index
+    smallest = arr[0]       
+    smallestIndex = 0
+    for i in range(1, len(arr)):   
+        if arr[i] < smallest:      
+            smallest = arr[i]
+            smallestIndex = i
+    return smallestIndex
 
-# now we use this function to write selection sort
 def selectSort(arr):
-  new_arr = []
-  copied_arr = list(arr)
-  for i in range(len(copied_arr)):
-    smallest = findSmallest(copied_arr)
-    new_arr.append(copied_arr.pop(smallest))
-  return new_arr
-print(selectSort([5,3,6,4,10, 1]))
+    new_arr = []
+    copiedArr = list(arr)
+    for i in range(len(copiedArr)):
+        smallest = findSmallest(copiedArr)
+        new_arr.append(copiedArr.pop(smallest))
+    return new_arr
+
 
