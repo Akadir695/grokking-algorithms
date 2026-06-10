@@ -19,6 +19,9 @@ print(sum([1, 2, 3, 4]))
 # write recursive function to find the number items in the list
 # we can do this with loop 
 def count_items(arr):
+  counter = 0
   for x in arr:
-    print(x)
+    counter = counter + 1
+  return counter
+    
 print(count_items([1, 2, 3, 4]))  
