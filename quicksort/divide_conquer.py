@@ -72,8 +72,6 @@ def print_items(mylist_items):
 print_items([1, 2, 3])
 # the performance of quicksort depends on the pivot you choose
 # Quicksort is fast when the pivot splits the list evenly, and slow when the pivot splits it badly.
-def multiply_list(arr):
-  if len(arr) < 1:
-    return arr
+
   
 
