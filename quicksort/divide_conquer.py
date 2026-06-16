@@ -13,7 +13,7 @@ def count_items(arr):
     counter = counter + 1
   return counter
 print(count_items([1, 2, 3, 4]))  
-# recurcive function
+# recursive function
 def recursive_items(arr):
   if arr == []:
     return 0
@@ -47,3 +47,33 @@ def recursive_maximun_num(list):
     else:
         return max_rest
 print(recursive_maximun_num([1, 2, 3, 4]))  
+# Quicksort is sorting algorithms: 
+# what if the arrays has tree elements (we find the pivot then 
+"""This is the key step: you split the rest of the array (everything except the pivot) into two groups:
+elements smaller than or equal to the pivot
+elements larger than the pivot"""
+
+def quicksort(arr):
+  if len(arr) < 2:
+    return arr
+  pivot = arr[0]
+  less = [i for i in  arr[1:] if i <= pivot]
+  greater = [i for i in arr[1:] if i > pivot]
+  return quicksort(less) + [pivot] + quicksort(greater)
+print(quicksort([4, 1, 3]))
+
+# merge sort vs quiksort 
+# Suppose we have this simple function to print every item in the list
+from time import sleep
+def print_items(mylist_items):
+  for item in mylist_items:
+    sleep(1)
+    print(item)
+print_items([1, 2, 3])
+# the performance of quicksort depends on the pivot you choose
+# Quicksort is fast when the pivot splits the list evenly, and slow when the pivot splits it badly.
+def multiply_list(arr):
+  if len(arr) < 1:
+    return arr
+  
+
